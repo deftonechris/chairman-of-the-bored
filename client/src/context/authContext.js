@@ -36,7 +36,6 @@ function authReducer(state, action) {
     default:
       return state;
   }
-   
 }
 
 function AuthProvider(props) {

@@ -18,7 +18,6 @@ const typeDefs = gql`
     password: String
   }
 
-
   type Task {
     activity: String
     type: String

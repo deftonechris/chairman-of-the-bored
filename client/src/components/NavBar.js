@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 
-const Header = () => {
+const NavBar = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [active, setActive] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -125,4 +125,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavBar;

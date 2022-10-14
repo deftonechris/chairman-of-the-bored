@@ -48,7 +48,7 @@ const resolvers = {
     },
     async loginUser(_, { loginInput: { email, password } }) {
       //    see if user exists with the email
-    
+
       const user = await User.findOne({ email });
       console.log(user);
       // check if password matches encrypted password
@@ -66,7 +66,7 @@ const resolvers = {
         // token already exists,
         user.token = token;
         // Save out user in mongodb
-        const res = await user
+        const res = await user;
         return {
           id: res.id,
           ...res._doc,

@@ -7,8 +7,6 @@ import { FaHandPointRight, FaFacebook, FaWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import StartUp from "../assets/startup.png";
 
-
-
 const RegisterModal = (props) => {
   const context = useContext(AuthContext);
   const [errors, setErrors] = useState([]);
@@ -31,7 +29,7 @@ const RegisterModal = (props) => {
     },
     onCompleted(data) {
       console.log("onCompleted");
-       window.location.assign("/");
+      window.location.assign("/");
     },
 
     onError({ graphQLErrors }) {

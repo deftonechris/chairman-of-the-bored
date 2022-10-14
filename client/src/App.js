@@ -7,6 +7,9 @@ import { AuthProvider } from "./context/authContext";
 // Apollo Client Setup
 import { ApolloProvider } from "@apollo/react-hooks";
 
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
 //Pages
 import HomePage from "./pages/homePage";
 import AboutPage from "./pages/aboutPage";
@@ -15,7 +18,6 @@ import LeaderBoardPage from "./pages/LeaderBoardPage";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
-
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -38,12 +40,14 @@ const App = () => {
     <AuthProvider>
       <ApolloProvider client={client}>
         <Router>
+          <NavBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/leaderboard" element={<LeaderBoardPage />} />
           </Routes>
+          <Footer />
         </Router>
       </ApolloProvider>
     </AuthProvider>

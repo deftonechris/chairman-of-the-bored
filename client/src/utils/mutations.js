@@ -20,8 +20,6 @@ export const REGISTER_USER = gql`
   }
 `;
 
-
-
 // export const SAVE_TASK = gql`
 //   mutation saveTask($input: SavedTaskInput) {
 //     saveTask(input: $input) {

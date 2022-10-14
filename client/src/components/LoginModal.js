@@ -8,10 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { LOGIN_USER } from "../utils/mutations";
 // import GoogleButton from "./GoogleButton";
 
-
-
 const LoginModal = (props) => {
-
   const context = useContext(AuthContext);
   const [errors, setErrors] = useState([]);
 
