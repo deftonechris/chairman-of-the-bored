@@ -32,7 +32,7 @@ const resolvers = {
       // create JWT token (attach to out user model) the user model in User.js
       const token = jwt.sign(
         { user_id: newUser._id, email },
-        "this is the secret",
+        process.env.JWT_SECRET,
         {
           expiresIn: "2h",
         }
@@ -58,7 +58,7 @@ const resolvers = {
         console.log("passwords match");
         const token = jwt.sign(
           { user_id: user._id, email },
-          "this is the secret",
+          process.env.JWT_SECRET,
           {
             expiresIn: "2h",
           }
