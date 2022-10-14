@@ -2,26 +2,16 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/authContext";
 import { useForm } from "../utils/hooks";
 import { useMutation } from "@apollo/react-hooks";
-import { gql } from "graphql-tag";
-import { useNavigate } from "react-router-dom";
+import { REGISTER_USER } from "../utils/mutations";
 import { FaHandPointRight, FaFacebook, FaWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import StartUp from "../assets/startup.png";
 
-const REGISTER_USER = gql`
-  mutation Mutation($registerInput: RegisterInput) {
-    registerUser(registerInput: $registerInput) {
-      email
-      username
-      token
-    }
-  }
-`;
+
 
 const RegisterModal = (props) => {
   const context = useContext(AuthContext);
   const [errors, setErrors] = useState([]);
-  let navigate = useNavigate();
 
   const registerCallback = () => {
     console.log("register callback");
@@ -38,7 +28,6 @@ const RegisterModal = (props) => {
   const [registerUser, { loading }] = useMutation(REGISTER_USER, {
     update(proxy, { data: { registerUser: userData } }) {
       context.login(userData);
-      navigate("/");
     },
     onCompleted(data) {
       console.log("onCompleted");
