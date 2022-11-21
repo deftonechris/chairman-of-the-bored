@@ -19,7 +19,7 @@ const ActivityResult = (props) => {
 
 const Results = (activity) => {
   var activityName = activity.name;
-  console.log(activityName);
+  // console.log(activityName);
 
   if (!activity) {
     return <ActivityResult />;
